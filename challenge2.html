@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge Two</title>
+    
+    <script>
+	   function setHomeAddress(){
+      // YOUR  JavaScript/jQuery CODE HERE
+           
+           //if the checkbox is checked, copy the billing address and disable editing
+           if (document.getElementById('useBilling').checked)
+           {
+                var x = document.getElementById('billing').value;
+                document.getElementById('home').innerHTML = x;
+                document.getElementById('home').disabled = true;   
+           } // else reset the home address to blank and enable editing
+           else{
+                document.getElementById("home").defaultValue = "";
+                document.getElementById('home').disabled = false;
+           }
+     }
+    </script>
+</head>
+<body>
+    <h1>Challenge Two</h1>
+    <form action="challenge3.html">
+      <fieldset>
+        <legend>Billing Information</legend>
+        <div>
+          <label for ="billing">Billing Address:</label><br>
+          <textarea name="billingAdd" id="billing"></textarea>
+        </div>
+
+        <div>
+          <label for ="home">Home Address:</label><br>
+          <input type="checkbox" name="useBilling" onclick = "setHomeAddress()" id="useBilling"> Same as above <br>
+        <textarea name="homeAdd" id="home"></textarea>
+        </div>
+        <input type = "submit" value = "Go To Challenge 3">
+      </fieldset>
+      </form>
+</body>
+</html>
